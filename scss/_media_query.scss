@@ -1,0 +1,54 @@
+@media (max-width: 1200px) {
+  .container {
+    padding: 20px !important;
+    .profile {
+      padding: 40px !important;
+      margin: 0 10px !important;
+      .profile-image {
+        width: 100% !important;
+      }
+
+      .social {
+        a {
+          font-size: 18px !important;
+          padding:6px 8px !important;
+        }
+      }
+      .info{
+        font-size: 12px !important;
+        span{
+          font-size: 18px !important;
+          padding: 4px 8px !important;
+        }
+      }
+    }
+
+    .about{
+      padding: 40px !important;
+      margin: 0 10px !important;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .profile{
+    .info{
+      max-width: 300px !important;
+      a{
+        font-size: 10px !important;
+      }
+      span{
+        i{
+          font-size: 16px !important;
+        }
+
+      }
+    }
+
+    .cv-down{
+      a{
+        font-size: 14px !important;
+      }
+    }
+  }
+}

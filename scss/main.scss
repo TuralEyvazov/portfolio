@@ -1,0 +1,172 @@
+@use 'reset' as *;
+@use 'variables' as *;
+@use "media_query" as *;
+
+
+#portfolio {
+  background-color: $primary;
+  padding: 10px 0;
+
+  .card {
+    @include flex-center;
+  }
+  .profile {
+    background-color: $black;
+    min-width: 300px;
+    width: 500px;
+    @extend .rounded-lg;
+    padding: min(4em, 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile-image {
+      width: 80%;
+      @extend .rounded-lg;
+      overflow: hidden;
+    }
+
+    .title {
+      color: white;
+      margin: 30px 0;
+
+      span {
+        display: inline-block;
+        padding: 6px 12px;
+        background-color: $secondary;
+        @extend .rounded-sm;
+        margin-top: 8px;
+      }
+    }
+
+    .social {
+      @include flex-center(space-between);
+
+      li {
+        a {
+          @include flex-center();
+          padding: 6px 8px;
+          background-color: #fff;
+          @extend .rounded-sm;
+          font-size: 22px;
+          transform: scale(1);
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+
+        @for $i from 1 through 4 {
+          &:nth-of-type(#{$i}) {
+            i {
+              color: nth($social_color, $i);
+            }
+          }
+        }
+      }
+    }
+
+    .info{
+      background-color: $secondary;
+      margin: 40px 10px;
+      padding: 20px;
+      font-size: 18px;
+      @extend .rounded-lg;
+      min-width: 90%;
+      li{
+        border-bottom: 1px solid rgba(96, 96, 96, 0.58);
+        padding: 10px 0;
+        margin-bottom: 20px;
+        @include flex-center(space-between);
+        a{
+          color: white;
+          font-size: 12px !important;
+        }
+        span{
+          display: inline-block;
+          padding: 8px 12px;
+          background-color: #000;
+          @extend .rounded-sm;
+
+          i{
+            color:  lime;
+            font-size: 24px ;
+          }
+        }
+
+      }
+    }
+
+    .cv-down{
+      a{
+        border: none;
+        background-color: #25d366;
+        color: $secondary;
+        padding: 10px 20px;
+        font-size: 20px;
+        @extend .rounded-lg;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .about {
+    min-width: 300px;
+    width: 1000px;
+    background-color: $black;
+    @extend .rounded-lg;
+    padding: min(4em, 10%);
+    color: white;
+    .about-me{
+      h2{
+        font-size:clamp(1.8rem,calc(7vw + 1rem), 5rem);
+        position: relative;
+        margin-bottom: 30px ;
+        &::after{
+          position: absolute;
+          content: "";
+          bottom: -10px;
+          left: 0;
+          width: 40%;
+          height: 4px;
+          background-color: #E62659;
+        }
+      }
+    }
+    .skills{
+      h3{
+        font-size:clamp(1.2rem,calc(7vw + 1rem), 2rem);
+        position: relative;
+        margin: 30px 0;
+      }
+      .skill{
+        border: 1px solid $secondary;
+        max-width: 96%;
+        font-size: 12px;
+        min-height: 180px;
+        padding: 10px;
+        @extend .rounded-sm;
+        box-shadow: 0 0 4px 2px rgba(52, 52, 52, 0.53);
+        h5{
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+        span{
+          display: inline-block;
+          padding: 8px 12px;
+          background-color: $secondary;
+          @extend .rounded-sm;
+          margin-right: 20px;
+          margin-bottom: 10px;
+          font-size:   26px;
+          color: #D566FF;
+        }
+      }
+    }
+  }
+
+}
+
+
+

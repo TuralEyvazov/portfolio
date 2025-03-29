@@ -1,0 +1,40 @@
+$primary: #30192E;
+$secondary: #1D1D1D;
+$black: #111;
+$btn: #E62659;
+$grid_col: 12;
+$break_points: (
+        xs:0,
+        sm: 576px,
+        md: 768px,
+        lg: 960px,
+        xl: 1200px,
+);
+
+$social_color: (
+        #25d366,
+        #b20b2d,
+        #131313,
+        #4242ef
+);
+
+@each $key, $value in $break_points {
+  @media (min-width: $value) {
+    @for $i from 1 through $grid_col {
+      .col-#{$key}-#{$i} {
+        width: calc(100% / 12 * $i);
+      }
+    }
+  }
+}
+
+@mixin flex-center($justify: center, $align: center,$direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+.text-center {
+  text-align: center;
+}
