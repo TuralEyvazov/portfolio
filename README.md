@@ -1,1 +1,1 @@
-https://turaleyvazov.github.io/portfolio/
+https://tural-eyvazov.netlify.app/
